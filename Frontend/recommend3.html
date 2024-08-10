@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Recommendation</title>
+    <link rel="stylesheet" href="style6.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="#">CropRec</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="recommend.html">Crop Recommendation</a></li>
+                    <li><a href="market.html">Market Insights</a></li>
+                    <li><a href="about3.html">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <h2>Crop Recommendation</h2>
+            <form id="crop-form">
+                <label for="soil-type">Soil Type:</label>
+                <select id="soil-type" name="soil-type" required>
+                    <option value="">Select Soil Type</option>
+                    <option value="clay">Clay</option>
+                    <option value="sandy">Sandy</option>
+                    <option value="silty">Silty</option>
+                    <option value="loamy">Loamy</option>
+                    <option value="peaty">Peaty</option>
+                    <option value="saline">Saline</option>
+                </select>
+
+                <label for="ph-level">Soil pH Level:</label>
+                <input type="number" id="ph-level" name="ph-level" step="0.1" required>
+
+                <label for="nitrogen">Nitrogen Content (mg/kg):</label>
+                <input type="number" id="nitrogen" name="nitrogen" required>
+
+                <label for="phosphorus">Phosphorus Content (mg/kg):</label>
+                <input type="number" id="phosphorus" name="phosphorus" required>
+
+                <label for="potassium">Potassium Content (mg/kg):</label>
+                <input type="number" id="potassium" name="potassium" required>
+
+                <button type="submit">Get Recommendations</button>
+            </form>
+
+            <!-- Output Sections -->
+            <section id="recommend">
+                <h3>Best Crops for the Given Soil Conditions:</h3>
+                <textarea id="best-crops" readonly></textarea>
+
+                <h3>Improvement Suggestions for Selected Crops:</h3>
+                <textarea id="improvement-suggestions" readonly></textarea>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 CropRec. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('crop-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            const formData = new FormData(this);
+
+            fetch('/recommend', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                const bestCropsTextArea = document.getElementById('best-crops');
+                const improvementSuggestionsTextArea = document.getElementById('improvement-suggestions');
+                
+                bestCropsTextArea.value = '';
+                improvementSuggestionsTextArea.value = '';
+
+                if (data.error) {
+                    bestCropsTextArea.value = data.error;
+                } else {
+                    data.suitable_crops.forEach(crop => {
+                        bestCropsTextArea.value += crop.Crop + "\n";
+                    });
+
+                    data.improvements.forEach(improvement => {
+                        improvementSuggestionsTextArea.value += improvement + "\n";
+                    });
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>
