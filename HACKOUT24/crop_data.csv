@@ -1,0 +1,26 @@
+Crop,pH_min,pH_max,N_min,N_max,P_min,P_max,K_min,K_max,Temp_min,Temp_max,Rainfall,Soil_Type
+Corn,6.0,7.5,150,250,30,60,200,250,18,30,High,Loamy
+Soybeans,6.0,7.0,80,160,25,50,150,200,15,30,Medium,Loamy
+Wheat,6.0,7.5,100,200,20,40,150,200,10,25,Medium,Loamy
+Rice,5.5,7.0,120,180,15,30,80,120,20,35,High,Clay
+Potatoes,5.5,6.5,120,180,20,40,150,200,15,25,Medium,Sandy
+Carrots,6.0,7.0,70,100,20,40,150,200,15,25,Medium,Loamy
+Tomatoes,6.0,6.8,100,150,40,80,200,250,15,30,High,Loamy
+Lettuce,6.0,7.0,100,200,20,50,150,200,15,25,Medium,Loamy
+Cabbage,6.0,7.5,100,200,20,50,150,200,10,25,Medium,Loamy
+Peppers,6.0,7.0,100,150,30,60,200,250,15,30,High,Loamy
+Strawberries,5.5,6.5,50,100,25,50,150,200,10,20,High,Sandy
+Barley,6.0,7.0,100,150,20,40,150,200,10,25,Medium,Loamy
+Oats,6.0,7.0,80,150,20,40,150,200,10,25,Medium,Loamy
+Rye,6.0,7.0,80,150,20,40,150,200,10,25,Medium,Loamy
+Millet,5.5,7.0,50,120,15,30,80,120,15,30,Medium,Sandy
+Sorghum,5.5,7.5,50,150,10,20,100,200,15,35,Medium,Sandy
+Cucumbers,6.0,7.0,100,150,20,40,150,200,15,30,Medium,Loamy
+Pumpkins,6.0,7.0,80,150,20,40,150,200,15,30,Medium,Loamy
+Peas,6.0,7.0,60,120,20,30,80,120,10,25,Medium,Loamy
+Melons,6.0,7.0,100,150,20,40,200,250,15,30,High,Sandy
+Sugar Beets,6.0,8.0,100,200,10,25,100,200,10,30,Medium,Loamy
+Tobacco,5.5,6.5,80,150,25,40,100,200,15,25,Medium,Loamy
+Cassava,5.5,7.0,100,200,15,30,80,150,20,30,Medium,Sandy
+Sweet Potatoes,5.0,6.0,100,150,20,40,150,200,18,30,Medium,Loamy
+Chickpeas,6.0,7.5,50,100,20,40,100,150,15,30,Medium,Loamy
